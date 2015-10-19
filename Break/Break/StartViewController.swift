@@ -9,8 +9,20 @@
 import UIKit
 
 class StartViewController: UIViewController {
+   
 
+    @IBOutlet weak var topScoreLabel: UILabel!
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let topScore = GameData.mainData().topScore
+        
+        topScoreLabel.text = "\(topScore)"
+        
+    }
+    
+    
     @IBAction func play(sender: AnyObject) {
         
         let gameVC = GameViewController()
